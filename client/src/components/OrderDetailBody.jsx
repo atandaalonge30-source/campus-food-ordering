@@ -176,7 +176,7 @@ export default function OrderDetailBody() {
       <ConfirmModal
         open={cancelModal}
         title="Cancel this order?"
-        message="Please provide a reason for cancelling — the customer will see this."
+        message="Please provide a reason for cancelling. The customer will see this."
         confirmLabel="Cancel Order"
         danger
         onCancel={() => setCancelModal(false)}

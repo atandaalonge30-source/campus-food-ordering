@@ -4,13 +4,13 @@ export function formatNaira(amount) {
 }
 
 export function formatDate(dateStr) {
-  if (!dateStr) return '—';
+  if (!dateStr) return 'N/A';
   const d = new Date(dateStr);
   return d.toLocaleDateString('en-NG', { year: 'numeric', month: 'short', day: 'numeric' });
 }
 
 export function formatDateTime(dateStr) {
-  if (!dateStr) return '—';
+  if (!dateStr) return 'N/A';
   const d = new Date(dateStr);
   return `${d.toLocaleDateString('en-NG', { year: 'numeric', month: 'short', day: 'numeric' })}, ${d.toLocaleTimeString('en-NG', { hour: '2-digit', minute: '2-digit' })}`;
 }

@@ -7,7 +7,7 @@ export default function Footer() {
         <div>
           <h3 style={{ color: 'var(--color-cream)', marginBottom: 8 }}>Campus Food Ordering</h3>
           <p style={{ color: '#C9B9A6', maxWidth: 320 }}>
-            Built for The Polytechnic Ibadan — connecting students and staff with approved campus food vendors.
+            Built for The Polytechnic Ibadan, connecting students and staff with approved campus food vendors.
           </p>
         </div>
         <div style={{ color: '#C9B9A6', fontSize: '0.85rem' }}>

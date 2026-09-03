@@ -86,7 +86,7 @@ export default function VendorCategories() {
                   {categories.map((c) => (
                     <tr key={c.id}>
                       <td>{c.category_name}</td>
-                      <td>{c.description || '—'}</td>
+                      <td>{c.description || 'N/A'}</td>
                       <td>
                         <div className="flex gap-8">
                           <button className="btn btn-outline btn-sm" onClick={() => onEdit(c)}>Edit</button>

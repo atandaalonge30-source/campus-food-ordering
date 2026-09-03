@@ -16,7 +16,7 @@ export default function RegisterChoice() {
           </Link>
           <Link to="/register/vendor" className="card" style={{ textDecoration: 'none' }}>
             <h3>I run a food business on campus</h3>
-            <p>List your menu, receive orders, and manage sales — pending administrator approval.</p>
+            <p>List your menu, receive orders, and manage sales, pending administrator approval.</p>
             <span className="btn btn-secondary btn-sm">Register as Vendor</span>
           </Link>
         </div>

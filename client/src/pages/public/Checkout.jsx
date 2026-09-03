@@ -111,7 +111,7 @@ export default function Checkout() {
           </div>
           {paymentMethod === 'bank_transfer' && (
             <div className="alert alert-info mt-16">
-              Transfer to: <strong>Campus Food Ordering — Zenith Bank — 1234567890.</strong> You'll be able to submit your
+              Transfer to: <strong>Campus Food Ordering, Zenith Bank, 1234567890.</strong> You'll be able to submit your
               transaction reference from your order details page after placing the order.
             </div>
           )}

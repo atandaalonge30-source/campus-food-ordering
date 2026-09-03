@@ -61,7 +61,7 @@ export default function AdminReports() {
                 <thead><tr>{columns.map((c) => <th key={c}>{c.replace(/_/g, ' ')}</th>)}</tr></thead>
                 <tbody>
                   {report.rows.map((row, i) => (
-                    <tr key={i}>{columns.map((c) => <td key={c}>{String(row[c] ?? '—')}</td>)}</tr>
+                    <tr key={i}>{columns.map((c) => <td key={c}>{String(row[c] ?? 'N/A')}</td>)}</tr>
                   ))}
                 </tbody>
               </table>

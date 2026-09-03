@@ -67,7 +67,7 @@ export default function AdminVendorDetail() {
             <thead><tr><th>Name</th><th>Category</th><th>Price</th><th>Availability</th></tr></thead>
             <tbody>
               {foods.map((f) => (
-                <tr key={f.id}><td>{f.food_name}</td><td>{f.category_name || '—'}</td><td>{formatNaira(f.price)}</td><td><StatusBadge status={f.availability} /></td></tr>
+                <tr key={f.id}><td>{f.food_name}</td><td>{f.category_name || 'N/A'}</td><td>{formatNaira(f.price)}</td><td><StatusBadge status={f.availability} /></td></tr>
               ))}
             </tbody>
           </table>

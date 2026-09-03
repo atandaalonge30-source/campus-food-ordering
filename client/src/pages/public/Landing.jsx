@@ -38,7 +38,7 @@ export default function Landing() {
       {/* Hero */}
       <section style={{ background: 'var(--color-roast)', color: 'var(--color-cream)', padding: '88px 0 96px' }}>
         <div className="container" style={{ maxWidth: 720 }}>
-          <h1 style={{ color: 'var(--color-cream)' }}>Campus food, ordered ahead — no more queueing between lectures.</h1>
+          <h1 style={{ color: 'var(--color-cream)' }}>Campus food, ordered ahead, with no more queueing between lectures.</h1>
           <p style={{ color: '#D8C7B6', fontSize: '1.1rem', maxWidth: 540 }}>
             The Polytechnic Ibadan's own food ordering system. Browse menus from approved campus vendors,
             pay your way, and track your order from the kitchen to pickup.
@@ -61,7 +61,7 @@ export default function Landing() {
         {conflictMessage && <div className="alert alert-error">{conflictMessage}</div>}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px,1fr))', gap: 16 }}>
           {vendors.map((v) => <VendorCard key={v.id} vendor={v} />)}
-          {vendors.length === 0 && <p>No vendors are approved yet — check back soon.</p>}
+          {vendors.length === 0 && <p>No vendors are approved yet. Check back soon.</p>}
         </div>
       </section>
 
@@ -71,7 +71,7 @@ export default function Landing() {
         <p>A taste of what's currently available across campus.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px,1fr))', gap: 16 }}>
           {foods.map((f) => <FoodCard key={f.id} food={f} onAdd={(food) => addItem(food)} />)}
-          {foods.length === 0 && <p>No food items are available yet — check back soon.</p>}
+          {foods.length === 0 && <p>No food items are available yet. Check back soon.</p>}
         </div>
       </section>
 

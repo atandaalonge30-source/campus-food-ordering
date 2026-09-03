@@ -29,7 +29,7 @@ export default function AdminTransactions() {
             <tbody>
               {transactions.map((t) => (
                 <tr key={t.id}>
-                  <td>{t.reference || '—'}</td><td>{t.order_number}</td><td>{t.customer_name}</td><td>{t.business_name}</td>
+                  <td>{t.reference || 'N/A'}</td><td>{t.order_number}</td><td>{t.customer_name}</td><td>{t.business_name}</td>
                   <td>{formatNaira(t.amount)}</td><td>{t.method.replace('_', ' ')}</td>
                   <td><StatusBadge status={t.status} /></td><td>{formatDateTime(t.created_at)}</td>
                 </tr>

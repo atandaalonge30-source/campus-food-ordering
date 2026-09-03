@@ -25,7 +25,7 @@ export default function AdminActivityLog() {
             <tbody>
               {logs.map((l) => (
                 <tr key={l.id}>
-                  <td>{titleCase(l.action)}</td><td>{l.full_name || 'System'}</td><td>{l.role || '—'}</td>
+                  <td>{titleCase(l.action)}</td><td>{l.full_name || 'System'}</td><td>{l.role || 'N/A'}</td>
                   <td>{l.details}</td><td>{formatDateTime(l.created_at)}</td>
                 </tr>
               ))}

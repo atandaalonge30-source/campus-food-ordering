@@ -105,7 +105,7 @@ export default function VendorFoods() {
                     </div>
                   </td>
                   <td>{f.food_name}</td>
-                  <td>{f.category_name || '—'}</td>
+                  <td>{f.category_name || 'N/A'}</td>
                   <td>{formatNaira(f.price)}</td>
                   <td><StatusBadge status={f.availability} /></td>
                   <td>
