@@ -25,7 +25,6 @@ export const assetUrl = (filename) => {
   return `${base}/uploads/${filename}`;
 };
 
-// ---------- Auth ----------
 export const AuthAPI = {
   registerCustomer: (data) => api.post('/auth/register/customer', data),
   registerVendor: (data) => api.post('/auth/register/vendor', data),
@@ -35,7 +34,6 @@ export const AuthAPI = {
   changePassword: (data) => api.put('/auth/change-password', data)
 };
 
-// ---------- Vendors ----------
 export const VendorAPI = {
   listPublic: () => api.get('/vendors'),
   getPublic: (id) => api.get(`/vendors/${id}`),
@@ -48,7 +46,6 @@ export const VendorAPI = {
   adminSetStatus: (id, status) => api.put(`/vendors/admin/${id}/status`, { status })
 };
 
-// ---------- Categories ----------
 export const CategoryAPI = {
   listMine: () => api.get('/categories/mine'),
   listByVendorPublic: (vendorId) => api.get(`/categories/vendor/${vendorId}`),
@@ -57,7 +54,6 @@ export const CategoryAPI = {
   remove: (id) => api.delete(`/categories/${id}`)
 };
 
-// ---------- Foods ----------
 export const FoodAPI = {
   listPublic: (params) => api.get('/foods', { params }),
   getOnePublic: (id) => api.get(`/foods/${id}`),
@@ -68,7 +64,6 @@ export const FoodAPI = {
   remove: (id) => api.delete(`/foods/${id}`)
 };
 
-// ---------- Orders ----------
 export const OrderAPI = {
   create: (data) => api.post('/orders', data),
   myOrders: () => api.get('/orders/mine'),
@@ -80,7 +75,6 @@ export const OrderAPI = {
   adminListAll: (params) => api.get('/orders/admin/all', { params })
 };
 
-// ---------- Notifications ----------
 export const NotificationAPI = {
   list: () => api.get('/notifications'),
   unreadCount: () => api.get('/notifications/unread-count'),
@@ -88,7 +82,6 @@ export const NotificationAPI = {
   markAllAsRead: () => api.put('/notifications/read-all')
 };
 
-// ---------- Admin ----------
 export const AdminAPI = {
   dashboard: () => api.get('/admin/dashboard'),
   listCustomers: (params) => api.get('/admin/customers', { params }),

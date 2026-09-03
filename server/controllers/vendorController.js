@@ -85,7 +85,6 @@ const VendorController = {
     } catch (err) { next(err); }
   },
 
-  // ---------- ADMIN ACTIONS ----------
 
   // GET /api/vendors/admin/all?status=&search=
   async adminListAll(req, res, next) {

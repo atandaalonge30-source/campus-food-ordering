@@ -6,9 +6,7 @@
 
 USE campus_food_ordering;
 
--- ---------------------------------------------------------
 -- Users: 1 admin, 3 vendor-owners, 2 customers
--- ---------------------------------------------------------
 INSERT INTO users (full_name, email, phone, password, role, status) VALUES
 ('System Administrator', 'admin@tpi.edu.ng', '08010000001', '$2b$10$2uJu0KQr8X0JdI2eZIaZ6eYlewSUon9MA5.rd1T2HxKt.ondKvYDW', 'admin', 'active'),
 ('Adeola Bakare',        'campusbites@tpi.edu.ng', '08010000002', '$2b$10$2uJu0KQr8X0JdI2eZIaZ6eYlewSUon9MA5.rd1T2HxKt.ondKvYDW', 'vendor', 'active'),
@@ -17,17 +15,13 @@ INSERT INTO users (full_name, email, phone, password, role, status) VALUES
 ('Tobi Adebayo',         'tobi.student@tpi.edu.ng', '08020000001', '$2b$10$2uJu0KQr8X0JdI2eZIaZ6eYlewSUon9MA5.rd1T2HxKt.ondKvYDW', 'customer', 'active'),
 ('Chidinma Eze',         'chidinma.student@tpi.edu.ng', '08020000002', '$2b$10$2uJu0KQr8X0JdI2eZIaZ6eYlewSUon9MA5.rd1T2HxKt.ondKvYDW', 'customer', 'active');
 
--- ---------------------------------------------------------
 -- Vendors (linked to the vendor users above, all approved)
--- ---------------------------------------------------------
 INSERT INTO vendors (user_id, business_name, campus_location, description, approval_status) VALUES
 (2, 'Campus Bites',   'Student Union Building, TPI',        'Fast, tasty Nigerian meals for busy students.', 'approved'),
 (3, 'Poly Kitchen',   'Behind School of Engineering, TPI',  'Home-style soups and swallow made fresh daily.', 'approved'),
 (4, 'Student Cafe',   'Main Gate Area, TPI',                'Snacks, drinks and quick bites between lectures.', 'approved');
 
--- ---------------------------------------------------------
 -- Categories
--- ---------------------------------------------------------
 INSERT INTO categories (vendor_id, category_name, description) VALUES
 (1, 'Rice Dishes', 'Jollof, fried rice and rice combos'),
 (1, 'Proteins',    'Chicken, beef, fish and other proteins'),
@@ -37,9 +31,7 @@ INSERT INTO categories (vendor_id, category_name, description) VALUES
 (3, 'Snacks',      'Meat pie, sausage roll and pastries'),
 (3, 'Beverages',   'Drinks and water');
 
--- ---------------------------------------------------------
 -- Foods
--- ---------------------------------------------------------
 INSERT INTO foods (vendor_id, category_id, food_name, description, price, availability) VALUES
 (1, 1, 'Jollof Rice',            'Smoky party-style jollof rice with pepper sauce.', 1200.00, 'available'),
 (1, 1, 'Fried Rice',             'Nigerian fried rice with mixed vegetables.',        1300.00, 'available'),

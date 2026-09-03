@@ -8,9 +8,7 @@ CREATE DATABASE IF NOT EXISTS campus_food_ordering
 
 USE campus_food_ordering;
 
--- ---------------------------------------------------------
 -- users
--- ---------------------------------------------------------
 CREATE TABLE IF NOT EXISTS users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   full_name VARCHAR(150) NOT NULL,
@@ -25,9 +23,7 @@ CREATE TABLE IF NOT EXISTS users (
   INDEX idx_users_role (role)
 ) ENGINE=InnoDB;
 
--- ---------------------------------------------------------
 -- vendors
--- ---------------------------------------------------------
 CREATE TABLE IF NOT EXISTS vendors (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT NOT NULL,
@@ -42,9 +38,7 @@ CREATE TABLE IF NOT EXISTS vendors (
   INDEX idx_vendors_status (approval_status)
 ) ENGINE=InnoDB;
 
--- ---------------------------------------------------------
 -- categories
--- ---------------------------------------------------------
 CREATE TABLE IF NOT EXISTS categories (
   id INT AUTO_INCREMENT PRIMARY KEY,
   vendor_id INT NOT NULL,
@@ -56,9 +50,7 @@ CREATE TABLE IF NOT EXISTS categories (
   INDEX idx_categories_vendor (vendor_id)
 ) ENGINE=InnoDB;
 
--- ---------------------------------------------------------
 -- foods
--- ---------------------------------------------------------
 CREATE TABLE IF NOT EXISTS foods (
   id INT AUTO_INCREMENT PRIMARY KEY,
   vendor_id INT NOT NULL,
@@ -77,9 +69,7 @@ CREATE TABLE IF NOT EXISTS foods (
   INDEX idx_foods_availability (availability)
 ) ENGINE=InnoDB;
 
--- ---------------------------------------------------------
 -- orders
--- ---------------------------------------------------------
 CREATE TABLE IF NOT EXISTS orders (
   id INT AUTO_INCREMENT PRIMARY KEY,
   order_number VARCHAR(40) NOT NULL,
@@ -101,9 +91,7 @@ CREATE TABLE IF NOT EXISTS orders (
   INDEX idx_orders_status (order_status)
 ) ENGINE=InnoDB;
 
--- ---------------------------------------------------------
 -- order_items
--- ---------------------------------------------------------
 CREATE TABLE IF NOT EXISTS order_items (
   id INT AUTO_INCREMENT PRIMARY KEY,
   order_id INT NOT NULL,
@@ -116,9 +104,7 @@ CREATE TABLE IF NOT EXISTS order_items (
   INDEX idx_order_items_order (order_id)
 ) ENGINE=InnoDB;
 
--- ---------------------------------------------------------
 -- payments
--- ---------------------------------------------------------
 CREATE TABLE IF NOT EXISTS payments (
   id INT AUTO_INCREMENT PRIMARY KEY,
   order_id INT NOT NULL,
@@ -132,9 +118,7 @@ CREATE TABLE IF NOT EXISTS payments (
   INDEX idx_payments_order (order_id)
 ) ENGINE=InnoDB;
 
--- ---------------------------------------------------------
 -- notifications
--- ---------------------------------------------------------
 CREATE TABLE IF NOT EXISTS notifications (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT NOT NULL,
@@ -148,9 +132,7 @@ CREATE TABLE IF NOT EXISTS notifications (
   INDEX idx_notifications_read (is_read)
 ) ENGINE=InnoDB;
 
--- ---------------------------------------------------------
 -- activity_logs
--- ---------------------------------------------------------
 CREATE TABLE IF NOT EXISTS activity_logs (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT DEFAULT NULL,

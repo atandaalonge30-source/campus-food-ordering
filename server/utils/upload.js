@@ -7,9 +7,7 @@ if (!fs.existsSync(UPLOAD_DIR)) fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 
 const ALLOWED_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
 
-// --------------------------------------------------------------------------
 // STORAGE ABSTRACTION
-// --------------------------------------------------------------------------
 // For the academic demo, files are written to local disk (server/uploads)
 // and served statically from /uploads/<filename>. This is fine for a local
 // or single-instance demo but NOT for production on Vercel, since Vercel's
@@ -25,7 +23,6 @@ const ALLOWED_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
 //   3. No other code changes are required — controllers only deal with
 //      `req.file.filename` (local) or `req.file.path` (cloud URL), which
 //      you would adapt in the two upload controllers.
-// --------------------------------------------------------------------------
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, UPLOAD_DIR),

@@ -16,7 +16,6 @@ const adminRoutes = require('./routes/adminRoutes');
 
 const app = express();
 
-// --- Security & core middleware ---
 const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:5173')
   .split(',')
   .map(o => o.trim());

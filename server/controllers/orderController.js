@@ -213,7 +213,6 @@ const OrderController = {
     } catch (err) { next(err); }
   },
 
-  // ---------- ADMIN ----------
 
   // GET /api/orders/admin/all
   async adminListAll(req, res, next) {
