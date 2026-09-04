@@ -21,6 +21,8 @@ api.interceptors.response.use(
 
 export const assetUrl = (filename) => {
   if (!filename) return null;
+  // If the stored value is already a full URL (e.g. external image), return it unchanged
+  if (/^https?:\/\//i.test(filename)) return filename;
   const base = API_URL.replace(/\/api\/?$/, '');
   return `${base}/uploads/${filename}`;
 };

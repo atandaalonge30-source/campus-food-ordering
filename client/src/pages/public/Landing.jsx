@@ -36,7 +36,13 @@ export default function Landing() {
   return (
     <PublicLayout>
       {/* Hero */}
-      <section style={{ background: 'var(--color-roast)', color: 'var(--color-cream)', padding: '88px 0 96px' }}>
+      <section style={{
+        backgroundImage: 'linear-gradient(rgba(90,68,51,0.65), rgba(90,68,51,0.65)), url(https://source.unsplash.com/collection/190727/1600x900)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        color: 'var(--color-cream)',
+        padding: '88px 0 96px'
+      }}>
         <div className="container" style={{ maxWidth: 720 }}>
           <h1 style={{ color: 'var(--color-cream)' }}>Campus food, ordered ahead, with no more queueing between lectures.</h1>
           <p style={{ color: '#D8C7B6', fontSize: '1.1rem', maxWidth: 540 }}>

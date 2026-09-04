@@ -32,17 +32,18 @@ INSERT INTO categories (vendor_id, category_name, description) VALUES
 (3, 'Beverages',   'Drinks and water');
 
 -- Foods
-INSERT INTO foods (vendor_id, category_id, food_name, description, price, availability) VALUES
-(1, 1, 'Jollof Rice',            'Smoky party-style jollof rice with pepper sauce.', 1200.00, 'available'),
-(1, 1, 'Fried Rice',             'Nigerian fried rice with mixed vegetables.',        1300.00, 'available'),
-(1, 1, 'White Rice and Stew',    'Steamed white rice with rich tomato stew.',         1100.00, 'available'),
-(1, 2, 'Grilled Chicken',        'Well-seasoned grilled chicken laps.',                1500.00, 'available'),
-(1, 3, 'Soft Drink',             'Chilled 50cl bottled soft drink.',                    350.00, 'available'),
-(2, 4, 'Amala',                  'Smooth amala served with your choice of soup.',      1000.00, 'available'),
-(2, 4, 'Pounded Yam',            'Freshly pounded yam, soft and stretchy.',            1200.00, 'available'),
-(2, 4, 'Eba',                    'Well-garri eba, a swallow classic.',                  900.00, 'available'),
-(2, 5, 'Egusi Soup',             'Melon seed soup loaded with assorted meat.',         1800.00, 'available'),
-(2, 5, 'Vegetable Soup',         'Efo-style vegetable soup with fish and meat.',       1700.00, 'unavailable'),
-(3, 6, 'Meat Pie',               'Golden baked pastry with seasoned minced meat.',      500.00, 'available'),
-(3, 6, 'Sausage Roll',           'Classic sausage wrapped in pastry.',                  400.00, 'available'),
-(3, 7, 'Bottled Water',          'Chilled 75cl bottled water.',                         200.00, 'available');
+-- Add an `image` column value so the client can show pictures. Uses source.unsplash.com demo images.
+INSERT INTO foods (vendor_id, category_id, food_name, description, price, availability, image) VALUES
+(1, 1, 'Jollof Rice',            'Smoky party-style jollof rice with pepper sauce.', 1200.00, 'available', 'https://source.unsplash.com/collection/190727/800x600?sig=1'),
+(1, 1, 'Fried Rice',             'Nigerian fried rice with mixed vegetables.',        1300.00, 'available', 'https://source.unsplash.com/collection/190727/800x600?sig=2'),
+(1, 1, 'White Rice and Stew',    'Steamed white rice with rich tomato stew.',         1100.00, 'available', 'https://source.unsplash.com/collection/190727/800x600?sig=3'),
+(1, 2, 'Grilled Chicken',        'Well-seasoned grilled chicken laps.',                1500.00, 'available', 'https://source.unsplash.com/collection/190727/800x600?sig=4'),
+(1, 3, 'Soft Drink',             'Chilled 50cl bottled soft drink.',                    350.00, 'available', 'https://source.unsplash.com/collection/190727/800x600?sig=5'),
+(2, 4, 'Amala',                  'Smooth amala served with your choice of soup.',      1000.00, 'available', 'https://source.unsplash.com/collection/190727/800x600?sig=6'),
+(2, 4, 'Pounded Yam',            'Freshly pounded yam, soft and stretchy.',            1200.00, 'available', 'https://source.unsplash.com/collection/190727/800x600?sig=7'),
+(2, 4, 'Eba',                    'Well-garri eba, a swallow classic.',                  900.00, 'available', 'https://source.unsplash.com/collection/190727/800x600?sig=8'),
+(2, 5, 'Egusi Soup',             'Melon seed soup loaded with assorted meat.',         1800.00, 'available', 'https://source.unsplash.com/collection/190727/800x600?sig=9'),
+(2, 5, 'Vegetable Soup',         'Efo-style vegetable soup with fish and meat.',       1700.00, 'unavailable', 'https://source.unsplash.com/collection/190727/800x600?sig=10'),
+(3, 6, 'Meat Pie',               'Golden baked pastry with seasoned minced meat.',      500.00, 'available', 'https://source.unsplash.com/collection/190727/800x600?sig=11'),
+(3, 6, 'Sausage Roll',           'Classic sausage wrapped in pastry.',                  400.00, 'available', 'https://source.unsplash.com/collection/190727/800x600?sig=12'),
+(3, 7, 'Bottled Water',          'Chilled 75cl bottled water.',                         200.00, 'available', 'https://source.unsplash.com/collection/190727/800x600?sig=13');
