@@ -3,7 +3,8 @@ import DashboardLayout from '../../layouts/DashboardLayout.jsx';
 import { StatGrid, StatCard } from '../../components/StatCard.jsx';
 import StatusBadge from '../../components/StatusBadge.jsx';
 import { Loader, EmptyState } from '../../components/Loader.jsx';
-import { AdminAPI } from '../../services/api.js';
+import { AdminAPI, FoodAPI, assetUrl } from '../../services/api.js';
+import { formatNaira, formatDateTime, titleCase } from '../../utils/format.js';
 import { formatNaira, formatDateTime, titleCase } from '../../utils/format.js';
 
 export const ADMIN_NAV = [
@@ -19,10 +20,14 @@ export const ADMIN_NAV = [
 
 export default function AdminDashboard() {
   const [data, setData] = useState(null);
+  const [recentFoods, setRecentFoods] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     AdminAPI.dashboard().then(({ data }) => setData(data)).finally(() => setLoading(false));
+    FoodAPI.listPublic({ onlyAvailable: false }).then(({ data }) => {
+      setRecentFoods(data.foods?.slice(0, 6) || []);
+    }).catch(() => {});
   }, []);
 
   if (loading) return <DashboardLayout title="Admin Dashboard" navItems={ADMIN_NAV}><Loader /></DashboardLayout>;
@@ -84,6 +89,25 @@ export default function AdminDashboard() {
           )}
         </div>
       </div>
+      <section style={{ marginTop: 24 }}>
+        <h3>Recent Food Items</h3>
+        {recentFoods.length === 0 ? <EmptyState title="No food items" message="" /> : (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px,1fr))', gap: 12 }}>
+            {recentFoods.map((f) => (
+              <div key={f.id} className="card" style={{ padding: 8, display: 'flex', gap: 8, alignItems: 'center' }}>
+                <div style={{ width: 72, height: 56, background: 'var(--color-surface-sunken)', overflow: 'hidden' }}>
+                  {f.image ? <img src={assetUrl(f.image)} alt={f.food_name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <div style={{ padding: 8 }}>{f.food_name?.charAt(0)}</div>}
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontWeight: 700 }}>{f.food_name}</div>
+                  <div style={{ fontSize: '0.85rem' }}>{f.business_name || f.vendor_name || ''}</div>
+                </div>
+                <div style={{ fontWeight: 700 }}>{formatNaira(f.price)}</div>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
     </DashboardLayout>
   );
 }
